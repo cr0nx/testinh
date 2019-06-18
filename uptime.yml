@@ -1,0 +1,9 @@
+- name: Test ansible playbook for awx
+  gather_facts: false
+  hosts: localhost
+  tasks:
+
+    - name: Get uptime
+      command: uptime
+      register: res
+    - debug: msg="{{ res.stdout }}"
