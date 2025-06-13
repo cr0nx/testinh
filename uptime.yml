@@ -1,5 +1,7 @@
 - name: Test ansible playbook for awx
   gather_facts: false
+  become: true
+  become_method: sudo
   hosts: all
   tasks:
 
@@ -10,5 +12,9 @@
     
     - name: Get dmesg
       command: dmesg
+      register: res
+    - debug: msg="{{ res.stdout }}"
+    - name: Get id
+      command: id
       register: res
     - debug: msg="{{ res.stdout }}"
