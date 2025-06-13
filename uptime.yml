@@ -1,6 +1,6 @@
 - name: Test ansible playbook for awx
   gather_facts: false
-  hosts: localhost
+  hosts: all
   tasks:
 
     - name: Get uptime
