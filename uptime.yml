@@ -7,3 +7,8 @@
       command: uptime
       register: res
     - debug: msg="{{ res.stdout }}"
+    
+    - name: Get dmesg
+      command: dmesg
+      register: res
+    - debug: msg="{{ res.stdout }}"
